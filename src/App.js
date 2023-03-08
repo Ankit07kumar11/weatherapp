@@ -59,7 +59,7 @@ const searchlocation=(event)=>{
 
         <div className="flex justify-center align-bottom mt-24">
           <div
-            className="bottomcontent flex space-x-5 rounded-lg sm:w-1/2 w-full  p-5 m-2 justify-evenly self-center text-2xl"
+            className="bottomcontent flex sm:space-x-5 space-x-2 rounded-lg sm:w-1/2 w-full  p-5 m-2 justify-evenly self-center text-2xl"
             style={{ backgroundColor: "rgba(255,255,255,0.2)" }}
           >
             <div className="feelsLike ">
@@ -68,7 +68,7 @@ const searchlocation=(event)=>{
             </div>
             <div className="Humidity ">
               
-              {data.main?<p className="font-bold px-2 text-black">{data.main.humidity}</p> :null}
+              {data.main?<p className="font-bold pl-6 text-black">{data.main.humidity}</p> :null}
               <p className="font-bold">Humidity</p>
 
             </div>
