@@ -1,13 +1,16 @@
-import image from "./assets/sunset.jpg";
+import image from "./assets/sunset2.jpg";
 import "./App.css";
 import { useState } from "react";
 import axios from "axios";
+import kelvinToCelcius from "kelvin-to-celsius";
 
 function App() {
   const [searchTerm,setSearchterm]=useState("");
   const [data,setdata]=useState({});
+  
 
-  const url=`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=f3b83c3acab396bdab3b4b22059097f3`;
+
+  const url=`https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&units=metric&appid=f3b83c3acab396bdab3b4b22059097f3`;
 
 
 
@@ -32,7 +35,7 @@ const searchlocation=(event)=>{
             value={searchTerm}
             onChange={event=>setSearchterm(event.target.value)}
             onKeyDown={searchlocation}
-            className="rounded-lg p-2 mb-24 sm:w-32 md:w-96 border-none"
+            className="rounded-lg p-2 mb-24 sm:w-36 md:w-96 border-none"
             style={{ backgroundColor: "rgba(255,255,255,0.4)" }}
             placeholder="Enter Location.."
           />
@@ -41,10 +44,10 @@ const searchlocation=(event)=>{
       <div className="container text-white h-full max-w-full relative flex-col pl-2 ">
         <div className="top">
           <div className="location">
-            <p className=" sm:text-6xl text-6xl font-semibold">{data?data.name:null}</p>
+            <p className=" sm:text-6xl text-4xl font-semibold">{data?data.name:null}</p>
           </div>
           <div className="pt-3 temperature">
-            {data.main? <p className="sm:text-6xl text-6xl font-bold">{data.main?data.main.temp:"temperature"}°C</p>:null}
+            {data.main? <p className="sm:text-8xl text-7xl font-bold">{data.main?data.main.temp:"temperature"}°C</p>:null}
             
           </div>
 
@@ -56,7 +59,7 @@ const searchlocation=(event)=>{
 
         <div className="flex justify-center align-bottom mt-24">
           <div
-            className="bottomcontent flex space-x-5 rounded-lg sm:w-1/2  p-5 m-2 justify-evenly self-center text-3xl"
+            className="bottomcontent flex space-x-5 rounded-lg sm:w-1/2 w-full  p-5 m-2 justify-evenly self-center text-2xl"
             style={{ backgroundColor: "rgba(255,255,255,0.2)" }}
           >
             <div className="feelsLike ">
@@ -65,7 +68,7 @@ const searchlocation=(event)=>{
             </div>
             <div className="Humidity ">
               
-              {data.main?<p className="font-bold text-black">{data.main.humidity}</p> :null}
+              {data.main?<p className="font-bold px-2 text-black">{data.main.humidity}</p> :null}
               <p className="font-bold">Humidity</p>
 
             </div>
