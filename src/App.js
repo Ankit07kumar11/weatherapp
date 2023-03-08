@@ -2,7 +2,7 @@ import image from "./assets/sunset2.jpg";
 import "./App.css";
 import { useState } from "react";
 import axios from "axios";
-import kelvinToCelcius from "kelvin-to-celsius";
+// import apiid from "./id.env";
 
 function App() {
   const [searchTerm,setSearchterm]=useState("");
