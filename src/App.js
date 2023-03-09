@@ -18,7 +18,8 @@ const searchlocation=(event)=>{
   if (event.key==="Enter"){
   axios.get(url).then((response)=>{
     setdata(response.data)
-    console.log(data)
+    setSearchterm("")
+    // console.log(data)
   })
 }
 }
@@ -56,6 +57,7 @@ const searchlocation=(event)=>{
             
           </div>
         </div>
+        { data.name?
 
         <div className="flex justify-center align-bottom mt-24">
           <div
@@ -76,7 +78,8 @@ const searchlocation=(event)=>{
               {data.wind?<p className="font-bold  text-black">{data.wind.speed}MPH</p>:null} <p className="font-bold">Wind Speed</p>
             </div>
           </div>
-        </div>
+        </div>:null}
+
       </div>
     </div>
   );
